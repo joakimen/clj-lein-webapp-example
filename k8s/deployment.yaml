@@ -21,7 +21,7 @@ spec:
         app: clj-lein-webapp-example
     spec:
       containers:
-      - image: joakimen/clj-lein-webapp-example
+      - image: joakimen/clj-lein-webapp-example:0.1.0
         imagePullPolicy: Always
         name: clj-lein-webapp-example
         resources: {}
