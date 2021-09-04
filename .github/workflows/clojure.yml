@@ -19,3 +19,9 @@ jobs:
       run: lein test
     - name: Build
       run: lein uberjar
+
+    - name: Setup clj-kondo
+      uses: DeLaGuardo/setup-clj-kondo@v1
+
+    - name: Lint src with clj-kondo
+      uses: clj-kondo --lint src
