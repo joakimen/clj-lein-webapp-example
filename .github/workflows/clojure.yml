@@ -19,9 +19,8 @@ jobs:
       run: lein test
     - name: Build
       run: lein uberjar
-
-    - name: Setup clj-kondo
-      uses: DeLaGuardo/setup-clj-kondo@v1
-
-    - name: Lint src with clj-kondo
-      run: clj-kondo --lint src
+    
+    - uses: DeLaGuardo/clojure-lint-action@master
+      with:
+        clj-kondo-args: --lint src
+        github_token: ${{ secrets.GITHUB_TOKEN }}
