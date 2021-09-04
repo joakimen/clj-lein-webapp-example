@@ -13,10 +13,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Install dependencies
       run: lein deps
+
     - name: Run tests
       run: lein test
+
     - name: Build
       run: lein uberjar
     
