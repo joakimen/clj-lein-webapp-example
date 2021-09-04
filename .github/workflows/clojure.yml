@@ -24,4 +24,4 @@ jobs:
       uses: DeLaGuardo/setup-clj-kondo@v1
 
     - name: Lint src with clj-kondo
-      uses: clj-kondo --lint src
+      run: clj-kondo --lint src
