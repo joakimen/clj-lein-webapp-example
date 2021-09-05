@@ -9,18 +9,22 @@ Example-webapp in Clojure using [ring](https://github.com/ring-clojure/ring) and
 ### Run locally
 
 ```sh
-$ lein uberjar
+$ lein ring uberjar
 $ java -jar target/app.jar
-$ curl localhost:3000
-Hello, World!
+
+$ curl localhost:3000/greet           
+{"greeting":"Hello World!"}
+
+$ curl "localhost:3000/greet?name=Billy"
+{"greeting":"Hello Billy!"} 
 ```
 
 ### Run in Docker
 
 ```sh
-$ docker run -it --rm -p 3000:3000 joakimen/clj-lein-webapp-example:0.1.0
-$ curl localhost:3000
-Hello, World!
+$ docker run -it --rm -p 3000:3000 joakimen/clj-lein-webapp-example:0.2.0
+$ curl localhost:3000/greet
+{"greeting":"Hello World!"}
 ```
 
 ### Run in Kubernetes
@@ -28,8 +32,8 @@ Hello, World!
 ```sh
 $ kubectl apply -k k8s/
 $ kubectl port-forward deployment/clj-lein-webapp-example 3000
-$ curl localhost:3000
-Hello, World!
+$ curl localhost:3000/greet
+{"greeting":"Hello World!"}
 ```
 
 ### Development with Tilt
