@@ -4,6 +4,6 @@ WORKDIR /usr/src/app
 COPY project.clj /usr/src/app/
 RUN lein deps
 COPY . /usr/src/app
-RUN mv "$(lein uberjar | sed -n 's/^Created \(.*app\.jar\)/\1/p')" app.jar
+RUN mv "$(lein ring uberjar | sed -n 's/^Created \(.*app\.jar\)/\1/p')" app.jar
 EXPOSE 3000
 CMD ["java", "-jar", "app.jar"]
