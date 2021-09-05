@@ -9,8 +9,7 @@ Example-webapp in Clojure using [ring](https://github.com/ring-clojure/ring) and
 ### Run locally
 
 ```sh
-$ lein ring uberjar
-$ java -jar target/app.jar
+$ lein ring server
 
 $ curl localhost:3000/greet           
 {"greeting":"Hello World!"}
